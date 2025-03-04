@@ -31,7 +31,7 @@ namespace EventDriven_Dashboard
 
         private void Checklist_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            
+           
         }
     }
 }
