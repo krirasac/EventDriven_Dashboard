@@ -1,0 +1,16 @@
+﻿<Page x:Class="EventDriven_Dashboard.Home"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:EventDriven_Dashboard"
+      mc:Ignorable="d" 
+      d:DesignHeight="540" d:DesignWidth="886"
+      Title="Home">
+
+    <Canvas Background="Azure">
+        <Label Content="Welcome Back!" HorizontalAlignment="Left" Margin="61,58,0,0" VerticalAlignment="Top" Width="393" Height="68" FontSize="48" FontWeight="Bold"/>
+        <Rectangle HorizontalAlignment="Left" Height="236" Margin="78,155,0,0" Stroke="Black" VerticalAlignment="Top" Width="376" Fill="#FFFFD3D3"/>
+
+    </Canvas>
+</Page>
