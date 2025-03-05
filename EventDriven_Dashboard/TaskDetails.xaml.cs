@@ -20,24 +20,15 @@ namespace EventDriven_Dashboard
     /// </summary>
     public partial class TaskDetails : UserControl
     {
-        public TaskDetails(string name, string date, string progress, string priority)
+        public TaskDetails(string name, string date, string priority)
         {
             InitializeComponent();
-            AddStatusItems();
             AddPriorityItems();
 
             TaskName.Content = name;
             Deadline.Content = date;
-            Status.SelectedItem = progress;
             Priority.SelectedItem = priority;
 
-        }
-
-        private void AddStatusItems()
-        {
-            Status.Items.Add("Not Yet Started");
-            Status.Items.Add("Ongoing");
-            Status.Items.Add("Complete");
         }
 
         private void AddPriorityItems()
@@ -45,6 +36,11 @@ namespace EventDriven_Dashboard
             Priority.Items.Add("Low");
             Priority.Items.Add("Medium");
             Priority.Items.Add("High");
+        }
+
+        private void Complete_Checked(object sender, RoutedEventArgs e)
+        {
+            ToDoItem
         }
     }
 }

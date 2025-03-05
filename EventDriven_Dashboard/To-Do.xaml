@@ -14,6 +14,5 @@
         <Button x:Name="TaskAddBTN" Content="+" HorizontalAlignment="Left" VerticalAlignment="Top" Height="39" Width="45" RenderTransformOrigin="0.988,0.656" Canvas.Left="803" Canvas.Top="116"/>
         <ListBox x:Name="Checklist" HorizontalAlignment="Center" Height="278" VerticalAlignment="Top" Width="793" d:ItemsSource="{Binding Incomplete}" Canvas.Left="55" Canvas.Top="167" SelectionChanged="Checklist_SelectionChanged"/>
         <Button x:Name="TaskSearchBTN" Content="Button" HorizontalAlignment="Left" Margin="792,39,0,0" VerticalAlignment="Top" Width="56" Height="42"/>
-        <Button Content="+" Height="39" Width="45" RenderTransformOrigin="0.988,0.656" Canvas.Left="747" Canvas.Top="116" HorizontalAlignment="Left" VerticalAlignment="Center"/>
     </Canvas>
 </Page>

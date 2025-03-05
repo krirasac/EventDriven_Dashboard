@@ -23,6 +23,7 @@ namespace EventDriven_Dashboard
     {
         private ObservableCollection<TaskDetails> Items { get; set; } = new ObservableCollection<TaskDetails>();
         private ObservableCollection<TaskDetails> Incomplete { get; set; } = new ObservableCollection<TaskDetails>();
+        private ObservableCollection<TaskDetails> Completed { get; set; } = new ObservableCollection<TaskDetails>();
 
         public To_Do()
         {
@@ -34,7 +35,6 @@ namespace EventDriven_Dashboard
 
         private void Checklist_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-           
         }
     }
 }

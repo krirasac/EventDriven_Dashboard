@@ -58,7 +58,7 @@ namespace EventDriven_Dashboard
 
             for (int x = 0; x < 3; x++)
             {
-                items.Add(new TaskDetails("Shopping",DateTime.Today.ToString("yyyy-MM-dd"), "Not Yet Started", "Low"));
+                items.Add(new TaskDetails("Shopping",DateTime.Today.ToString("yyyy-MM-dd"), "Low"));
             }
 
             return items;
