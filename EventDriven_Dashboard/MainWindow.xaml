@@ -5,14 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EventDriven_Dashboard"
         mc:Ignorable="d"
-        Title="MainWindow" Height="540" Width="960" WindowStartupLocation="CenterScreen">
+        Title="MainWindow" Height="540" Width="960" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Design.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
     <Grid>
-        <StackPanel x:Name="Navigation" HorizontalAlignment="Left" Width="74">
-            <Button x:Name="HomeBTN" Content="Home" Click="HomeBTN_Click"></Button>
-            <Button x:Name="ToDoBTN" Content="To-Do List" Click="ToDoBTN_Click"></Button>
-            <Button x:Name="NotesBTN" Content="Notes" Click="NotesBTN_Click"></Button>
-            <Button x:Name="ResoucesBTN" Content="Resources" Click="ResoucesBTN_Click"></Button>
-            <Button x:Name="MediaBTN" Content="Media" Click="MediaBTN_Click"></Button>
+        <StackPanel x:Name="Navigation" HorizontalAlignment="Left" Width="74" Background="#FFB5C6B1">
+            <Button Style="{StaticResource NavBTN}" x:Name="HomeBTN" Content="Home" Click="HomeBTN_Click"></Button>
+            <Button Style="{StaticResource NavBTN}" x:Name="ToDoBTN" Content="To-Do List" Click="ToDoBTN_Click"></Button>
+            <Button Style="{StaticResource NavBTN}" x:Name="NotesBTN" Content="Notes" Click="NotesBTN_Click"></Button>
+            <Button Style="{StaticResource NavBTN}" x:Name="ResoucesBTN" Content="Links" Click="ResoucesBTN_Click"></Button>
+            <Button Style="{StaticResource NavBTN}" x:Name="MediaBTN" Content="Media" Click="MediaBTN_Click"></Button>
         </StackPanel>
         <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" Margin="74,0,0,0">
         </Frame>

@@ -7,10 +7,114 @@
       mc:Ignorable="d" 
       d:DesignHeight="495" d:DesignWidth="886"
       Title="Media">
-
-    <Canvas Background="Azure">
-        <Label Content="Label" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="166" Canvas.Left="36" Canvas.Top="46" FontFamily="Franklin Gothic Demi" FontSize="16"/>
-        <DockPanel HorizontalAlignment="Center" Height="359" LastChildFill="False" VerticalAlignment="Top" Width="813" Canvas.Left="36" Canvas.Top="97"/>
-
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Design.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+    <Canvas Style="{StaticResource PageBG}">
+        <Label Style="{StaticResource LabelStyle}" Content="Gallery" HorizontalAlignment="Left" Height="69" VerticalAlignment="Top" Width="210" Canvas.Left="61" Canvas.Top="33" FontSize="48"/>
+        <WrapPanel HorizontalAlignment="Left" Height="151" VerticalAlignment="Top" Width="801" Canvas.Left="41" Canvas.Top="77" Orientation="Vertical" ScrollViewer.VerticalScrollBarVisibility="Auto" Grid.IsSharedSizeScope="True" ItemHeight="200" ItemWidth="200" RenderTransformOrigin="0.5,0.5" ScrollViewer.HorizontalScrollBarVisibility="Auto">
+            <WrapPanel.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </WrapPanel.RenderTransform>
+            <Image Style="{StaticResource ImageFit}" Source="/Assets/image1.jpg" RenderTransformOrigin="0.5,0.5" Margin="0,0,0,50">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="-1"/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+            <Image Style="{StaticResource ImageFit}" Source="/Assets/image2.jpg" RenderTransformOrigin="0.5,0.5">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="-1"/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+            <Image Style="{StaticResource ImageFit}" Source="/Assets/image3.jpg" RenderTransformOrigin="0.5,0.5">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="-1"/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+            <Image Style="{StaticResource ImageFit}" Source="/Assets/image4.jpg" RenderTransformOrigin="0.5,0.5">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="-1"/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+        </WrapPanel>
+        <WrapPanel  HorizontalAlignment="Left" Height="167" VerticalAlignment="Top" Width="804" Canvas.Left="41" Canvas.Top="260" Orientation="Vertical" ScrollViewer.VerticalScrollBarVisibility="Auto" Grid.IsSharedSizeScope="True" ItemHeight="200" ItemWidth="200" RenderTransformOrigin="0.5,0.5" ScrollViewer.HorizontalScrollBarVisibility="Auto">
+            <WrapPanel.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </WrapPanel.RenderTransform>
+            <Image Style="{StaticResource ImageFit}" Source="/Assets/image5.jpg" RenderTransformOrigin="0.5,0.5">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="-1"/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+            <Image Style="{StaticResource ImageFit}" Source="/Assets/image6.jpg" RenderTransformOrigin="0.5,0.5">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="-1"/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+            <Image Style="{StaticResource ImageFit}" Source="/Assets/image9.jpg" RenderTransformOrigin="0.5,0.5">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="-1"/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+            <Image Style="{StaticResource ImageFit}" Source="/Assets/image8.jpg" RenderTransformOrigin="0.5,0.5">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="-1"/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+        </WrapPanel>
     </Canvas>
 </Page>

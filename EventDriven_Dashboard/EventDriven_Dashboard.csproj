@@ -81,6 +81,10 @@
       <DependentUpon>To-Do.xaml</DependentUpon>
     </Compile>
     <Compile Include="ToDoItem.cs" />
+    <Page Include="Design.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="EditWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -160,7 +164,40 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Assets\" />
+    <Resource Include="Image1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\canva.png" />
+    <Resource Include="Assets\github.png" />
+    <Resource Include="Assets\mangadex.png" />
+    <Resource Include="Assets\webtoon.png" />
+    <Resource Include="Assets\youtube.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\image1.jpg" />
+    <Resource Include="Assets\image2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\image3.jpg" />
+    <Resource Include="Assets\image4.jpg" />
+    <Resource Include="Assets\image5.jpg" />
+    <Resource Include="Assets\image6.jpg" />
+    <Resource Include="Assets\image7.jpg" />
+    <Resource Include="Assets\image8.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\image9.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\morning.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\night.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

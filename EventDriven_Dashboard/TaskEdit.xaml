@@ -6,16 +6,16 @@
              xmlns:local="clr-namespace:EventDriven_Dashboard"
              mc:Ignorable="d" 
              d:DesignHeight="250" d:DesignWidth="600" Loaded="RetriveData">
-    <Grid Background="Azure">
-        <Canvas>
-            <Label Content="TaskName" Height="34" Canvas.Left="46" Canvas.Top="26" Width="122" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <Label Content="Deadline" Height="34" Canvas.Left="46" Canvas.Top="80" Width="122" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <Label Content="Priority" Height="34" Canvas.Left="46" Canvas.Top="130" Width="122" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <TextBox x:Name="EditTaskName" Height="28" Canvas.Left="196" TextWrapping="Wrap" Text="TextBox" Canvas.Top="29" Width="355" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <TextBox x:Name="EditDeadline" Height="28" Canvas.Left="196" TextWrapping="Wrap" Text="TextBox" Canvas.Top="80" Width="355" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+    <Grid>
+        <Canvas Background="#f7f7f5">
+            <Label Content="Task Name" Height="34" Canvas.Left="38" Canvas.Top="26" Width="122" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="#FF6C6969" FontFamily="Franklin Gothic Heavy" FontSize="20"/>
+            <Label Content="Deadline" Height="34" Canvas.Left="38" Canvas.Top="80" Width="122" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="#FF6C6969" FontFamily="Franklin Gothic Heavy" FontSize="20"/>
+            <Label Content="Priority" Height="34" Canvas.Left="38" Canvas.Top="130" Width="122" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="#FF6C6969" FontFamily="Franklin Gothic Heavy" FontSize="20"/>
+            <TextBox x:Name="EditTaskName" Height="28" Canvas.Left="196" TextWrapping="Wrap" Text="Name" Canvas.Top="29" Width="355" HorizontalAlignment="Center" VerticalAlignment="Top" MouseEnter="EditName"/>
+            <TextBox x:Name="EditDeadline" Height="28" Canvas.Left="196" TextWrapping="Wrap" Text="YYYY-MM-DD" Canvas.Top="80" Width="355" HorizontalAlignment="Center" VerticalAlignment="Top" MouseEnter="EditDate"/>
             <ComboBox x:Name="EditPriority" Height="32" Canvas.Left="196" Canvas.Top="132" Width="355" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            <Button x:Name="DeleteTaskBTN" Content="Delete" Canvas.Left="363" Canvas.Top="193" HorizontalAlignment="Center" VerticalAlignment="Top" Width="86" Height="30" Click="DeleteTaskBTN_Click"/>
-            <Button x:Name="SaveTaskBTN" Content="Save" Canvas.Left="465" Canvas.Top="193" Width="86" Height="30" HorizontalAlignment="Center" VerticalAlignment="Top" Click="SaveTaskBTN_Click"/>
+            <Button x:Name="DeleteTaskBTN" Content="Delete" Canvas.Left="363" Canvas.Top="193" HorizontalAlignment="Center" VerticalAlignment="Top" Width="86" Height="30" Click="DeleteTaskBTN_Click" BorderBrush="Transparent" Background="#FFDDA92E" Foreground="#FFF7F7F5" FontFamily="Franklin Gothic Heavy" FontWeight="Bold"/>
+            <Button x:Name="SaveTaskBTN" Content="Save" Canvas.Left="465" Canvas.Top="193" Width="86" Height="30" HorizontalAlignment="Center" VerticalAlignment="Top" Click="SaveTaskBTN_Click" BorderBrush="Transparent" Background="#FFABB469" Foreground="#FFF7F7F5" FontWeight="Bold" FontFamily="Franklin Gothic Heavy"/>
 
         </Canvas>
     </Grid>

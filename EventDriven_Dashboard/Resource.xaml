@@ -7,10 +7,35 @@
       mc:Ignorable="d" 
       d:DesignHeight="495" d:DesignWidth="886"
       Title="Resource">
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Design.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+    <Canvas Style="{StaticResource PageBG}">
+        <Label Style="{StaticResource LabelStyle}" Content="Favorite Links" HorizontalAlignment="Left" VerticalAlignment="Center" Width="351" FontSize="48" Canvas.Left="52" Canvas.Top="49"/>
 
-    <Canvas Background="Azure">
-        <Label Content="Resource" HorizontalAlignment="Left" Margin="52,65,0,0" VerticalAlignment="Top" Width="264"/>
-        <ListBox HorizontalAlignment="Left" Height="343" VerticalAlignment="Top" Width="692" d:ItemsSource="{d:SampleData ItemCount=5}" Canvas.Left="52" Canvas.Top="122"/>
-
+        <TextBlock Canvas.Left="228" Canvas.Top="178" Height="42" Width="150" HorizontalAlignment="Center" VerticalAlignment="Top">
+        <Hyperlink Style="{StaticResource Link}" NavigateUri="https://www.canva.com/">Canva</Hyperlink>
+        </TextBlock>
+        <TextBlock Canvas.Left="228" Canvas.Top="278" HorizontalAlignment="Center" VerticalAlignment="Top">
+         <Hyperlink Style="{StaticResource Link}" NavigateUri="https://github.com/">GitHub</Hyperlink>
+        </TextBlock>
+        <TextBlock Canvas.Left="228" Canvas.Top="381" HorizontalAlignment="Center" VerticalAlignment="Top">
+     <Hyperlink Style="{StaticResource Link}" NavigateUri="https://mangadex.org/">Mangadex</Hyperlink>
+        </TextBlock>
+        <TextBlock Canvas.Left="572" Canvas.Top="176" HorizontalAlignment="Center" VerticalAlignment="Top">
+     <Hyperlink Style="{StaticResource Link}" NavigateUri="https://www.webtoons.com/en/">Webtoon</Hyperlink>
+        </TextBlock>
+        <TextBlock Canvas.Left="572" Canvas.Top="278" HorizontalAlignment="Center" VerticalAlignment="Top">
+    <Hyperlink Style="{StaticResource Link}" NavigateUri="https://www.youtube.com/">Youtube</Hyperlink>
+        </TextBlock>
+        <Image Height="81" Source="/Assets/youtube.png" Stretch="Fill" Width="83" Canvas.Left="456" Canvas.Top="254" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <Image Height="83" Source="/Assets/webtoon.png" Stretch="Fill" Width="83" Canvas.Left="456" Canvas.Top="149" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <Image Height="81" Source="/Assets/github.png" Stretch="Fill" Width="83" Canvas.Left="126" Canvas.Top="254" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <Image Height="71" Source="/Assets/canva.png" Stretch="Fill" Width="71" Canvas.Left="132" Canvas.Top="161" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <Image Height="70" Source="/Assets/mangadex.png" Stretch="Fill" Width="72" Canvas.Left="131" Canvas.Top="360" HorizontalAlignment="Left" VerticalAlignment="Top"/>
     </Canvas>
 </Page>

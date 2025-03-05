@@ -20,9 +20,13 @@ namespace EventDriven_Dashboard
     /// </summary>
     public partial class TaskDetails : UserControl
     {
-        public string ItemName { get; set; }
-        public string Date { get; set; }
-        public string Urgency { get; set; }
+        public TaskDetails(string name, string date, string urgency)
+        {
+            InitializeComponent();
+            AddPriorityItems();
+            TaskName.Content = name; Deadline.Content = date;
+            Priority.SelectedItem = urgency;
+        }
         
         public TaskDetails()
         {

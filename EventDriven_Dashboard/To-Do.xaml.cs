@@ -59,5 +59,11 @@ namespace EventDriven_Dashboard
             addTask.EditGrid.Children.Add(addDetails);
 
         }
+
+        private void Checklist_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Data.Index = Checklist.SelectedIndex;
+        }
+
     }
 }

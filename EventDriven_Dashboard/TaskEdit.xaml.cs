@@ -23,8 +23,6 @@ namespace EventDriven_Dashboard
         public TaskDetails selectedTask { get; set; }
         public EditWindow currentWindow { get; set; }
 
-        public int index { get; set; }
-
         public TaskEdit()
         {
             InitializeComponent();
@@ -33,6 +31,7 @@ namespace EventDriven_Dashboard
         private void RetriveData(object sender, RoutedEventArgs e)
         {
             EditTaskName.Text = selectedTask.TaskName.Content.ToString();
+            EditDeadline.Text = selectedTask.Deadline.Content.ToString();
             EditPriority.ItemsSource = selectedTask.Priority.Items;
             EditPriority.SelectedIndex = selectedTask.Priority.SelectedIndex;
         }
@@ -43,9 +42,23 @@ namespace EventDriven_Dashboard
             {
                 selectedTask.TaskName.Content = EditTaskName.Text;
                 selectedTask.Priority.SelectedIndex = EditPriority.SelectedIndex;
+                
+                if (Data.todo.Checklist.ItemsSource == Data.Incomplete)
+                {
+                    Data.Incomplete[Data.Index] = selectedTask;
+                }
+
+                else if (Data.todo.Checklist.ItemsSource == Data.Completed)
+                {
+                    Data.Completed[Data.Index] = selectedTask;
+                }
+
             }
             else if (SaveTaskBTN.Content.ToString() == "Add")
             {
+                selectedTask.TaskName.Content = EditTaskName.Text;
+                selectedTask.Deadline.Content = EditDeadline.Text;
+                selectedTask.Priority.SelectedIndex = EditPriority.SelectedIndex;
                 Data.Incomplete.Add(selectedTask);
             }
 
@@ -54,12 +67,36 @@ namespace EventDriven_Dashboard
 
         private void DeleteTaskBTN_Click(object sender, RoutedEventArgs e)
         {
-            if (SaveTaskBTN.Content.ToString() == "Delete")
+            if (DeleteTaskBTN.Content.ToString() == "Delete")
             {
+                if (Data.todo.Checklist.ItemsSource == Data.Incomplete)
+                {
+                    Data.Incomplete.RemoveAt(Data.Index);
+                }
+
+                else if (Data.todo.Checklist.ItemsSource == Data.Completed)
+                {
+                    Data.Completed.RemoveAt(Data.Index);
+                }
             }
 
             currentWindow.Close();
+        }
 
+        private void EditDate(object sender, MouseEventArgs e)
+        {
+            if (EditDeadline.Text == "YYYY-MM-DD")
+            { 
+                EditDeadline.Text = string.Empty;
+            }
+        }
+
+        private void EditName(object sender, MouseEventArgs e)
+        {
+            if (EditTaskName.Text == "Name")
+            {
+                EditDeadline.Text = string.Empty;
+            }
         }
     }
 }

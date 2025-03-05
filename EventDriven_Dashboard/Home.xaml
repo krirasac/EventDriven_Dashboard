@@ -7,10 +7,17 @@
       mc:Ignorable="d" 
       d:DesignHeight="540" d:DesignWidth="886"
       Title="Home">
-
-    <Canvas Background="Azure">
-        <Label Content="Welcome Back!" HorizontalAlignment="Left" Margin="61,58,0,0" VerticalAlignment="Top" Width="393" Height="68" FontSize="48" FontWeight="Bold"/>
-        <Rectangle HorizontalAlignment="Left" Height="236" Margin="78,155,0,0" Stroke="Black" VerticalAlignment="Top" Width="376" Fill="#FFFFD3D3"/>
-
-    </Canvas>
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Design.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+    <Grid Background="Black">
+        <Canvas x:Name="BG">
+        <Label Style="{StaticResource LabelStyle}" Content="Welcome Back!" HorizontalAlignment="Center" VerticalAlignment="Top" Width="562" Height="68" FontSize="48" FontWeight="Bold" Canvas.Left="162" Canvas.Top="206" HorizontalContentAlignment="Center" Foreground="#FFF7F7F5"/>
+        <Label x:Name ="CurrentStyle" Style="{StaticResource LabelStyle}" Content="It's currently" Height="46" Canvas.Left="230" Canvas.Top="279" Width="426" HorizontalAlignment="Center" VerticalAlignment="Top" HorizontalContentAlignment="Center" Foreground="#FFF7F7F5"/>
+         </Canvas>
+    </Grid>
 </Page>

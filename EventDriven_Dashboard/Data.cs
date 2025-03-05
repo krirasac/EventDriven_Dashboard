@@ -10,7 +10,10 @@ namespace EventDriven_Dashboard
 {
     static internal class Data
     {
-        //for
+        static public To_Do todo { get; set; }
+        static public int Index { get; set; }
+
+        //for todo
         static public ObservableCollection<TaskDetails> Incomplete { get; set; } = new ObservableCollection<TaskDetails>();
         static public ObservableCollection<TaskDetails> Completed { get; set; } = new ObservableCollection<TaskDetails>();
         static public void AddToDoItems()
@@ -19,14 +22,12 @@ namespace EventDriven_Dashboard
 
             for (int x = 0; x < 3; x++)
             {
-                items.Add(new TaskDetails());
-                items[x].ItemName = "Shopping";
-                items[x].Date = DateTime.Today.ToString("yyyy-MM-dd");
-                items[x].Urgency = "Low";
+                items.Add(new TaskDetails("Shopping", DateTime.Today.ToString("yyyy-MM-dd"), "Low"));
             }
 
             Incomplete = items;
         }
+       
         //for notes
         static public ObservableCollection<NotePreview> Notes { get; set; } = new ObservableCollection<NotePreview>();
         static public ObservableCollection<NotePreview> Filtered { get; set; } = new ObservableCollection<NotePreview>();
@@ -68,7 +69,6 @@ namespace EventDriven_Dashboard
 
             return Filtered;
         }
-
         static private bool CheckItem(string select, string find)
         {
             bool check = false;

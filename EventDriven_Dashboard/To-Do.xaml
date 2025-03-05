@@ -7,13 +7,20 @@
       mc:Ignorable="d" 
       d:DesignHeight="495" d:DesignWidth="886"
       Title="To_Do" Loaded="RetrieveData">
-
-    <Canvas Background="Azure">
-        <TextBox x:Name="TaskSearch" HorizontalAlignment="Left" Margin="55,39,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="737" Height="42"/>
-        <Label Content="Task" HorizontalAlignment="Left" Margin="55,120,0,0" VerticalAlignment="Top" FontSize="22" Width="132" FontWeight="Bold" FontFamily="Franklin Gothic Demi"/>
-        <Button x:Name="TaskAddBTN" Content="+" HorizontalAlignment="Left" VerticalAlignment="Top" Height="39" Width="45" RenderTransformOrigin="0.988,0.656" Canvas.Left="803" Canvas.Top="116" Click="TaskAddBTN_Click"/>
-        <ListBox x:Name="Checklist" HorizontalAlignment="Center" Height="278" VerticalAlignment="Top" Width="793" d:ItemsSource="{Binding Incomplete}" Canvas.Left="55" Canvas.Top="167"/>
-        <Button x:Name="TaskSearchBTN" Content="Search" HorizontalAlignment="Left" Margin="792,39,0,0" VerticalAlignment="Top" Width="56" Height="42"/>
-        <Button x:Name="CompletedList" Content="Show Completed" Height="39" Canvas.Left="691" Canvas.Top="116" Width="107" HorizontalAlignment="Center" VerticalAlignment="Top" Click="ShowHide"/>
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Design.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+    <Canvas Style="{StaticResource PageBG}">
+        <Label Style="{StaticResource LabelStyle}" Content="To Do List" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="48" Width="270" FontWeight="Bold" FontFamily="Franklin Gothic Demi" Canvas.Left="55" Canvas.Top="38"/>
+        <Button Style="{StaticResource ExtraBTN}" x:Name="TaskAddBTN" Content="+" HorizontalAlignment="Center" VerticalAlignment="Center" Height="51" Width="51" RenderTransformOrigin="0.988,0.656" Canvas.Left="803" Canvas.Top="51" Click="TaskAddBTN_Click"/>
+        <ListBox Style="{StaticResource ListBoxStyle}" x:Name="Checklist" HorizontalAlignment="Center" Height="278" VerticalAlignment="Top" Width="793" d:ItemsSource="{Binding Incomplete}" Canvas.Left="55" Canvas.Top="178" SelectionChanged="Checklist_SelectionChanged" Foreground="LightGray"/>
+        <Button Style="{StaticResource RejectBTN}" x:Name="CompletedList" Content="Show Completed" Height="51" Canvas.Left="640" Canvas.Top="51" Width="158" HorizontalAlignment="Left" VerticalAlignment="Top" Click="ShowHide" Padding="5,5,5,5"/>
+        <Label Style="{StaticResource LabelStyle}" Content="Task Name" Canvas.Left="137" Canvas.Top="139" HorizontalAlignment="Center" VerticalAlignment="Top" Width="119"/>
+        <Label Style="{StaticResource LabelStyle}" Content="Deadline" Canvas.Left="331" Canvas.Top="139" Width="119" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <Label Style="{StaticResource LabelStyle}" Content="Priority" Canvas.Left="520" Canvas.Top="139" Width="119" HorizontalAlignment="Center" VerticalAlignment="Top"/>
     </Canvas>
 </Page>
