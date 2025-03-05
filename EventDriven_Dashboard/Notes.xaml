@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:EventDriven_Dashboard"
       mc:Ignorable="d" 
       d:DesignHeight="495" d:DesignWidth="886"
-      Title="Notes">
+      Title="Notes" Loaded="RetrieveData">
 
     <Canvas Background="Azure">
         <Rectangle Height="533" Width="250" HorizontalAlignment="Center" VerticalAlignment="Top" Fill="#FFA1FFAA" Canvas.Top="-22"/>

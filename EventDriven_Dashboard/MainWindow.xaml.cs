@@ -24,6 +24,8 @@ namespace EventDriven_Dashboard
         {
             InitializeComponent();
             MainFrame.Content = new Home();
+            Data.AddNoteContent();
+            Data.AddToDoItems();
         }
 
         private void HomeBTN_Click(object sender, RoutedEventArgs e)
@@ -39,7 +41,6 @@ namespace EventDriven_Dashboard
         private void NotesBTN_Click(object sender, RoutedEventArgs e)
         {
             MainFrame.Navigate(new NotePad());
-
         }
 
         private void ResoucesBTN_Click(object sender, RoutedEventArgs e)
@@ -50,7 +51,6 @@ namespace EventDriven_Dashboard
         private void MediaBTN_Click(object sender, RoutedEventArgs e)
         {
             MainFrame.Navigate(new Media());
-
         }
     }
 }

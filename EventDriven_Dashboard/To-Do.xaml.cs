@@ -21,20 +21,43 @@ namespace EventDriven_Dashboard
     /// </summary>
     public partial class To_Do : Page
     {
-        private ObservableCollection<TaskDetails> Items { get; set; } = new ObservableCollection<TaskDetails>();
-        private ObservableCollection<TaskDetails> Incomplete { get; set; } = new ObservableCollection<TaskDetails>();
-        private ObservableCollection<TaskDetails> Completed { get; set; } = new ObservableCollection<TaskDetails>();
-
         public To_Do()
         {
             InitializeComponent();
-            Items = Data.AddToDoItems();
-            Incomplete = Items;
-            Checklist.ItemsSource = Incomplete;
         }
 
-        private void Checklist_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void RetrieveData(object sender, RoutedEventArgs e)
         {
+            Checklist.ItemsSource = Data.Incomplete;
+        }
+
+        private void ShowHide(object sender, RoutedEventArgs e)
+        {
+            if (CompletedList.Content.ToString() == "Show Completed")
+            {
+                CompletedList.Content = "Hide Completed";
+                Checklist.ItemsSource = Data.Completed;
+            }
+            else if (CompletedList.Content.ToString() == "Hide Completed")
+            {
+                CompletedList.Content = "Show Completed";
+                Checklist.ItemsSource = Data.Incomplete;
+            }
+        }
+
+        private void TaskAddBTN_Click(object sender, RoutedEventArgs e)
+        {
+            EditWindow addTask = new EditWindow();
+            TaskEdit addDetails = new TaskEdit();
+
+            addTask.Title = "Add Task";
+            addDetails.selectedTask = new TaskDetails();
+            addDetails.currentWindow = addTask;
+            addDetails.SaveTaskBTN.Content = "Add";
+            addDetails.DeleteTaskBTN.Content = "Cancel";
+            addTask.Show();
+            addTask.EditGrid.Children.Add(addDetails);
+
         }
     }
 }

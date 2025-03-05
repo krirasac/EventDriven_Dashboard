@@ -20,27 +20,48 @@ namespace EventDriven_Dashboard
     /// </summary>
     public partial class TaskDetails : UserControl
     {
-        public TaskDetails(string name, string date, string priority)
+        public string ItemName { get; set; }
+        public string Date { get; set; }
+        public string Urgency { get; set; }
+        
+        public TaskDetails()
         {
             InitializeComponent();
             AddPriorityItems();
-
-            TaskName.Content = name;
-            Deadline.Content = date;
-            Priority.SelectedItem = priority;
-
+            Priority.SelectedIndex = 0;
         }
-
         private void AddPriorityItems()
         {
+            Priority.Items.Add("-Select Priority-");
             Priority.Items.Add("Low");
             Priority.Items.Add("Medium");
             Priority.Items.Add("High");
         }
-
-        private void Complete_Checked(object sender, RoutedEventArgs e)
+        private void EditBTN_Click(object sender, RoutedEventArgs e)
         {
-            ToDoItem
+            EditWindow editTask = new EditWindow();
+            TaskEdit edit = new TaskEdit();
+            
+            editTask.Title = "Edit Task";
+            edit.currentWindow = editTask;
+            edit.selectedTask = this;
+            editTask.Show();
+            editTask.EditGrid.Children.Add(edit);
+        }
+
+        private void ReturnINC(object sender, RoutedEventArgs e)
+        {
+            Data.Incomplete.Add(this);
+            Data.Completed.Remove(this);
+        }
+
+        private void ReturnComplete(object sender, RoutedEventArgs e)
+        {
+            if (Complete.IsChecked == true)
+            {
+                Data.Completed.Add(this);
+                Data.Incomplete.Remove(this);
+            }
         }
     }
 }

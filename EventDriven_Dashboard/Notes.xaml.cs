@@ -21,18 +21,10 @@ namespace EventDriven_Dashboard
     /// </summary>
     public partial class NotePad : Page
     {
-        public ObservableCollection<NotePreview> Notes { get; set; } = new ObservableCollection<NotePreview>();
-        public ObservableCollection<NotePreview> Filtered { get; set; } = new ObservableCollection<NotePreview> { };
-
         public NotePad()
         {
             InitializeComponent();
-            Notes = Data.AddNoteContent();
-            Filtered = Notes;
-            NoteList.ItemsSource = Filtered;
-            NoteCounter.Content = $"{Filtered.Count} Notes";
         }
-
         private void NoteList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (NoteList.SelectedItem is NotePreview temp)
@@ -47,17 +39,15 @@ namespace EventDriven_Dashboard
                 }
 
                 Note.Text = temp.ContentPrev.Content.ToString();
-
             }
         }
-
         private void NoteSaveBTN_Click(object sender, RoutedEventArgs e)
         {
             if (NoteList.SelectedItem is NotePreview temp)
             {
-                if (Notes.Contains(temp))
+                if (Data.Notes.Contains(temp))
                 { 
-                    Notes.Remove(temp);
+                    Data.Notes.Remove(temp);
                 }
 
                 temp.ContentPrev.Content = Note.Text;
@@ -67,8 +57,8 @@ namespace EventDriven_Dashboard
 
                 temp.Date.Content = DateTime.Today.ToString("yyyy-MM-dd");
 
-                Notes.Insert(0,temp);
-                Filtered = Notes;
+                Data.Notes.Insert(0,temp);
+                Data.Filtered = Data.Notes;
                 MessageBox.Show("Your note has been saved!");
 
                 NoteTitle.Text = string.Empty;
@@ -76,16 +66,14 @@ namespace EventDriven_Dashboard
 
             }
         }
-
         private void ReturnDefaultText(object sender, MouseEventArgs e)
         {
-            if (NoteTitle.Text == string.Empty)
+            if (NoteTitle.Text == string.Empty && NoteList.SelectedIndex != -1)
             {
                 NoteTitle.Text = "Title";
                 NoteTitle.Foreground = Brushes.Gray;
             }
         }
-
         private void ClearText(object sender, MouseEventArgs e)
         {
             if (NoteTitle.Text == "Title")
@@ -93,14 +81,11 @@ namespace EventDriven_Dashboard
                 NoteTitle.Text = string.Empty;
             }
         }
-
         private void NoteSearchBTN_Click(object sender, RoutedEventArgs e)
         {
-            Filtered = Data.FilterNotes(Notes,NoteSearch.Text);
-            NoteList.ItemsSource = Filtered;
-            NoteCounter.Content = $"{Filtered.Count} Notes";
+            NoteList.ItemsSource = Data.FilterNotes(NoteSearch.Text);
+            NoteCounter.Content = $"{Data.Filtered.Count} Notes";
         }
-
         private void NewNoteBTN_Click(object sender, RoutedEventArgs e)
         {
             NotePreview temp = new NotePreview();
@@ -112,25 +97,29 @@ namespace EventDriven_Dashboard
             NoteTitle.Text = temp.Title.Content.ToString();
             Note.Text = temp.ContentPrev.Content.ToString();
 
-            Filtered.Insert(0, temp);
-            Notes.Insert(0, temp);
+            Data.Filtered.Insert(0, temp);
+            Data.Notes.Insert(0, temp);
 
             NoteList.SelectedIndex = 0;
         }
-
         private void NoteDeleteBTN_Click(object sender, RoutedEventArgs e)
         {
-
             if (NoteList.SelectedIndex != -1)
             {
                 NotePreview temp = NoteList.SelectedItem as NotePreview;
 
-                if (Notes.Contains(temp)) { Notes.Remove(temp); }
-                Filtered.RemoveAt(NoteList.SelectedIndex);
+                if (Data.Notes.Contains(temp)) { Data.Notes.Remove(temp); }
+                Data.Filtered.RemoveAt(NoteList.SelectedIndex);
 
                 NoteTitle.Text = string.Empty;
                 Note.Text = string.Empty;
             }
+        }
+        private void RetrieveData(object sender, RoutedEventArgs e)
+        {
+            Data.Filtered = Data.Notes;
+            NoteList.ItemsSource = Data.Filtered;
+            NoteCounter.Content = $"{Data.Filtered.Count} Notes";
         }
     }
 }
