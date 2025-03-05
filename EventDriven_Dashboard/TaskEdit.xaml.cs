@@ -23,7 +23,7 @@ namespace EventDriven_Dashboard
         public TaskDetails selectedTask { get; set; }
         public EditWindow currentWindow { get; set; }
 
-        public int index { get; set; };
+        public int index { get; set; }
 
         public TaskEdit()
         {
