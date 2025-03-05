@@ -9,26 +9,11 @@
       Title="To_Do">
 
     <Canvas Background="Azure">
-        <TextBox HorizontalAlignment="Left" Margin="55,39,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="737" Height="42"/>
+        <TextBox x:Name="TaskSearch" HorizontalAlignment="Left" Margin="55,39,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="737" Height="42"/>
         <Label Content="Task" HorizontalAlignment="Left" Margin="55,120,0,0" VerticalAlignment="Top" FontSize="22" Width="132" FontWeight="Bold" FontFamily="Franklin Gothic Demi"/>
-        <Button Content="New Task" HorizontalAlignment="Left" Margin="736,116,0,0" VerticalAlignment="Top" Height="39" Width="112" RenderTransformOrigin="0.988,0.656"/>
-        <ListView x:Name="Checklist" HorizontalAlignment="Center" Height="274" VerticalAlignment="Top" Width="793" d:ItemsSource="{Binding Items}" Canvas.Left="55" Canvas.Top="167" SelectionChanged="Checklist_SelectionChanged">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Width="50">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <CheckBox IsChecked="{Binding IsChecked}" Margin="5"/>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                    <GridViewColumn Header="Task Name" DisplayMemberBinding="{Binding Name}" Width="303"/>
-                    <GridViewColumn Header="Deadline" DisplayMemberBinding="{Binding Deadline}" Width="130"/>
-                    <GridViewColumn Header="Status" DisplayMemberBinding="{Binding Status}" Width="150"/>
-                    <GridViewColumn Header="Priority" DisplayMemberBinding="{Binding Priority}" Width="150"/>
-                </GridView>
-            </ListView.View>
-        </ListView>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="792,39,0,0" VerticalAlignment="Top" Width="56" Height="42"/>
+        <Button x:Name="TaskAddBTN" Content="+" HorizontalAlignment="Left" VerticalAlignment="Top" Height="39" Width="45" RenderTransformOrigin="0.988,0.656" Canvas.Left="803" Canvas.Top="116"/>
+        <ListBox x:Name="Checklist" HorizontalAlignment="Center" Height="278" VerticalAlignment="Top" Width="793" d:ItemsSource="{Binding Incomplete}" Canvas.Left="55" Canvas.Top="167" SelectionChanged="Checklist_SelectionChanged"/>
+        <Button x:Name="TaskSearchBTN" Content="Button" HorizontalAlignment="Left" Margin="792,39,0,0" VerticalAlignment="Top" Width="56" Height="42"/>
+        <Button Content="+" Height="39" Width="45" RenderTransformOrigin="0.988,0.656" Canvas.Left="747" Canvas.Top="116" HorizontalAlignment="Left" VerticalAlignment="Center"/>
     </Canvas>
 </Page>

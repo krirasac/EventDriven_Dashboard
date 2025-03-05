@@ -30,6 +30,7 @@ namespace EventDriven_Dashboard
             Notes = Data.AddNoteContent();
             Filtered = Notes;
             NoteList.ItemsSource = Filtered;
+            NoteCounter.Content = $"{Filtered.Count} Notes";
         }
 
         private void NoteList_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -54,12 +55,9 @@ namespace EventDriven_Dashboard
         {
             if (NoteList.SelectedItem is NotePreview temp)
             {
-                int index;
-
                 if (Notes.Contains(temp))
                 { 
-                    index = Notes.IndexOf(temp);
-                    Notes.RemoveAt(index);
+                    Notes.Remove(temp);
                 }
 
                 temp.ContentPrev.Content = Note.Text;
@@ -72,6 +70,10 @@ namespace EventDriven_Dashboard
                 Notes.Insert(0,temp);
                 Filtered = Notes;
                 MessageBox.Show("Your note has been saved!");
+
+                NoteTitle.Text = string.Empty;
+                Note.Text = string.Empty;
+
             }
         }
 
@@ -96,6 +98,7 @@ namespace EventDriven_Dashboard
         {
             Filtered = Data.FilterNotes(Notes,NoteSearch.Text);
             NoteList.ItemsSource = Filtered;
+            NoteCounter.Content = $"{Filtered.Count} Notes";
         }
 
         private void NewNoteBTN_Click(object sender, RoutedEventArgs e)
@@ -103,6 +106,7 @@ namespace EventDriven_Dashboard
             NotePreview temp = new NotePreview();
 
             temp.Title.Content = "Untitled";
+            temp.Date.Content = DateTime.Today.ToString("yyyy-MM-dd");
             temp.ContentPrev.Content = string.Empty;
 
             NoteTitle.Text = temp.Title.Content.ToString();
@@ -116,13 +120,17 @@ namespace EventDriven_Dashboard
 
         private void NoteDeleteBTN_Click(object sender, RoutedEventArgs e)
         {
-            NotePreview temp = NoteList.SelectedItem as NotePreview;
 
-            if (Notes.Contains(temp)) { Notes.Remove(temp); }
-            Filtered.RemoveAt(NoteList.SelectedIndex);
+            if (NoteList.SelectedIndex != -1)
+            {
+                NotePreview temp = NoteList.SelectedItem as NotePreview;
 
-            NoteTitle.Text = string.Empty;
-            Note.Text = string.Empty;
+                if (Notes.Contains(temp)) { Notes.Remove(temp); }
+                Filtered.RemoveAt(NoteList.SelectedIndex);
+
+                NoteTitle.Text = string.Empty;
+                Note.Text = string.Empty;
+            }
         }
     }
 }

@@ -52,13 +52,13 @@ namespace EventDriven_Dashboard
 
 
         //for to-do
-        static public ObservableCollection<ToDoItem> AddToDoItems()
+        static public ObservableCollection<TaskDetails> AddToDoItems()
         { 
-            ObservableCollection<ToDoItem> items = new ObservableCollection<ToDoItem>();
+            ObservableCollection<TaskDetails> items = new ObservableCollection<TaskDetails>();
 
             for (int x = 0; x < 3; x++)
             {
-                items.Add(new ToDoItem("Shopping","2025-03-13","Haven't Started","Low"));
+                items.Add(new TaskDetails("Shopping",DateTime.Today.ToString("yyyy-MM-dd"), "Not Yet Started", "Low"));
             }
 
             return items;
@@ -73,11 +73,6 @@ namespace EventDriven_Dashboard
             {
                 for (int x = 0; x < select.Length; x++)
                 {
-                    if (x > find.Length)
-                    {
-                        break;
-                    }
-
                     for (int y = 0; y < find.Length; y++)
                     {
                         if (select[x + y] == find[y])

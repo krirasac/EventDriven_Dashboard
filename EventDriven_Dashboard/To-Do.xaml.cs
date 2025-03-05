@@ -21,12 +21,15 @@ namespace EventDriven_Dashboard
     /// </summary>
     public partial class To_Do : Page
     {
-        private ObservableCollection<ToDoItem> Items { get; set; } = new ObservableCollection<ToDoItem>();
+        private ObservableCollection<TaskDetails> Items { get; set; } = new ObservableCollection<TaskDetails>();
+        private ObservableCollection<TaskDetails> Incomplete { get; set; } = new ObservableCollection<TaskDetails>();
+
         public To_Do()
         {
             InitializeComponent();
-            Items=Data.AddToDoItems();
-            Checklist.ItemsSource = Items;
+            Items = Data.AddToDoItems();
+            Incomplete = Items;
+            Checklist.ItemsSource = Incomplete;
         }
 
         private void Checklist_SelectionChanged(object sender, SelectionChangedEventArgs e)
