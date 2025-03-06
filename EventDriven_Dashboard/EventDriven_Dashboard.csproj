@@ -80,7 +80,6 @@
     <Compile Include="To-Do.xaml.cs">
       <DependentUpon>To-Do.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ToDoItem.cs" />
     <Page Include="Design.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
