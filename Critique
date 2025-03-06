@@ -1,6 +1,24 @@
 Things to improve on:
 
-We
-
-Navigation
+Navigation Bar
 - darken the font color for the inactive tabs
+
+Home Page
+- Have a shadow effect for the text to avoid blending in to the BG
+
+Gallery
+- Make the image interactive via Zooming In and Closing
+
+To-Do
+- Items on High Priority should be placed at the front
+- Find a way to edit without having to select the item first
+- Change the Combobox and Edit Button design
+
+Notes
+- Just display the title since the box is small
+- Same issue with the editing
+- Have a prompt before deleting a note
+
+Link
+- Better if boxed per element so it would look neat in the eyes
+- Find a way to make the links functional
