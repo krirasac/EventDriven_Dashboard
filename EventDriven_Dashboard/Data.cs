@@ -40,6 +40,7 @@ namespace EventDriven_Dashboard
                 pages.Add(new NotePreview());
                 pages[x].ContentPrev.Content = "Lorem ipsum dolor sit amet. ";
                 pages[x].Date.Content = DateTime.Today.ToString("yyyy-MM-dd");
+
             }
 
             Notes = pages;
