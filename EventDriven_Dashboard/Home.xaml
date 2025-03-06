@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:EventDriven_Dashboard"
       mc:Ignorable="d" 
       d:DesignHeight="540" d:DesignWidth="886"
-      Title="Home">
+      Title="Home" Loaded="LoadBG">
     <Page.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>

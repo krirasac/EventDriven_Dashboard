@@ -121,5 +121,13 @@ namespace EventDriven_Dashboard
             NoteList.ItemsSource = Data.Filtered;
             NoteCounter.Content = $"{Data.Filtered.Count} Notes";
         }
+
+        private void RemoveText(object sender, MouseEventArgs e)
+        {
+            if (NoteSearch.Text == "Search...")
+            {
+                NoteSearch.Text = string.Empty;
+            }
+        }
     }
 }

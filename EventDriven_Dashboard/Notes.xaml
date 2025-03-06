@@ -17,7 +17,7 @@
     <Canvas Style="{StaticResource PageBG}">
         <Rectangle Height="533" Width="250" HorizontalAlignment="Center" VerticalAlignment="Top" Fill="#a8b468" Canvas.Top="-22"/>
         <TextBox Style="{StaticResource NotePadStyle}" x:Name="Note" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="571" Height="293" Canvas.Left="277" Canvas.Top="95"/>
-        <TextBox x:Name="NoteSearch" HorizontalAlignment="Center" Height="39" TextWrapping="Wrap" Text="Search..." VerticalAlignment="Top" Width="139" Canvas.Left="20" Canvas.Top="23" Padding="10,5,0,0"/>
+        <TextBox x:Name="NoteSearch" HorizontalAlignment="Center" Height="39" TextWrapping="Wrap" Text="Search..." VerticalAlignment="Top" Width="139" Canvas.Left="20" Canvas.Top="23" Padding="10,5,0,0" MouseEnter="RemoveText"/>
         <Button Style="{StaticResource ExtraBTN}" x:Name="NewNoteBTN" Content="+" HorizontalAlignment="Center" Height="37" VerticalAlignment="Top" Width="48" Canvas.Left="193" Canvas.Top="91" Click="NewNoteBTN_Click" FontSize="11" Padding="5,5,5,5" UseLayoutRounding="True"/>
         <ListBox Style="{StaticResource ListBoxStyle}" x:Name="NoteList" HorizontalAlignment="Center" Height="341" VerticalAlignment="Top" Width="209" ItemsSource="{Binding Filtered}" Canvas.Top="137" SelectionChanged="NoteList_SelectionChanged" Canvas.Left="20"/>
         <Button Style="{StaticResource ExtraBTN}" x:Name="NoteSearchBTN" Content="Search" Height="44" Canvas.Left="159" Canvas.Top="20" Width="82" HorizontalAlignment="Center" VerticalAlignment="Top" Click="NoteSearchBTN_Click" FontSize="12" VerticalContentAlignment="Top"/>

@@ -29,6 +29,8 @@ namespace EventDriven_Dashboard
             MainFrame.Content = new Home();
             Data.AddNoteContent();
             Data.AddToDoItems();
+            changeBG(HomeBTN);
+            previous = HomeBTN;
         }
 
         private void HomeBTN_Click(object sender, RoutedEventArgs e)

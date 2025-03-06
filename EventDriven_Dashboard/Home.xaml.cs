@@ -64,5 +64,10 @@ namespace EventDriven_Dashboard
                 BG.Background = brush;
             }
         }
+
+        private void LoadBG(object sender, RoutedEventArgs e)
+        {
+            ChangeIMG();
+        }
     }
 }
